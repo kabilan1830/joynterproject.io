@@ -1,0 +1,496 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from Worksbot-admin.themesease.com/form-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 14:46:30 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Worksbot Admin - Responsive Web Application Kit</title>
+
+    <!-- ========== COMMON STYLES ========== -->
+    <link rel="stylesheet" href="../static/css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" media="screen" />
+    <link rel="stylesheet" href="../static/css/animate-css/animate.min.css" media="screen" />
+    <link rel="stylesheet" href="../static/css/lobipanel/lobipanel.min.css" media="screen" />
+
+    <!-- ========== PAGE STYLES ========== -->
+    <link rel="stylesheet" href="../static/css/prism/prism.css" media="screen" />
+    <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
+
+    <!-- ========== THEME CSS ========== -->
+    <link rel="stylesheet" href="../static/css/main.css" media="screen" />
+
+    <!-- ========== MODERNIZR ========== -->
+    <script src="../static/js/modernizr/modernizr.min.js"></script>
+</head>
+
+<body class="top-navbar-fixed">
+    <div class="main-wrapper">
+        <!-- ========== TOP NAVBAR ========== -->
+        <nav class="navbar top-navbar bg-white box-shadow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="navbar-header no-padding">
+                        <a class="navbar-brand mr-1" href="../template/landing-page.html"><span id="title"
+                                style="color: blue; font-size: x-large">J</span>OYNTER</a>
+                        <span class="small-nav-handle hidden-sm hidden-xs"><i class="fa fa-outdent"></i></span>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                        <button type="button" class="navbar-toggle mobile-nav-toggle">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <!-- /.navbar-header -->
+
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li class="hidden-sm hidden-xs">
+                                <a href="#" class="user-info-handle"><i class="fa fa-user"></i></a>
+                            </li>
+                            <li class="hidden-sm hidden-xs">
+                                <a href="#" class="full-screen-handle"><i class="fa fa-arrows-alt"></i></a>
+                            </li>
+
+                            <li class="hidden-xs hidden-xs">
+                                <!-- <a href="#">My Tasks</a> -->
+                            </li>
+                        </ul>
+                        <!-- /.nav navbar-nav -->
+
+                        <ul class="nav navbar-nav navbar-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <!-- /.dropdown -->
+                            <li>
+                                <a href="#" class=""><i class="fa fa-bell"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class=""><i class="fa fa-comments"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">{{clg_data.name}} <span class="caret"></span></a>
+                                <ul class="dropdown-menu profile-dropdown">
+                                    <li class="profile-menu bg-gray">
+                                        <div class="">
+                                            <img src="http://placehold.it/60/c2c2c2?text=User" alt="John Doe"
+                                                class="img-circle profile-img" />
+                                            <div class="profile-name">
+                                                <h6>{{clg_data.name}}</h6>
+                                                <a href="#">View Profile</a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-cog"></i> Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-sliders"></i> Account Details</a>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <a href="#" class="color-danger text-center" data-toggle="modal"
+                                            data-target="#logoutModal"><i class="fa fa-sign-out"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /.dropdown -->
+                        </ul>
+                        <!-- /.nav navbar-nav navbar-right -->
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
+        <div class="content-wrapper">
+            <div class="content-container">
+                <!-- ========== LEFT SIDEBAR ========== -->
+                <div class="left-sidebar bg-black-300 box-shadow">
+                    <div class="sidebar-content">
+                        <div class="user-info closed">
+                            <img src="http://placehold.it/90/c2c2c2?text=User" alt="John Doe"
+                                class="img-circle profile-img" />
+                            <h6 class="title">{{clg_data.name}}</h6>
+                            <small class="info">college admin</small>
+                        </div>
+                        <!-- /.user-info -->
+
+                        <div class="sidebar-nav">
+                            <ul class="side-nav color-gray">
+                                <li class="">
+                                    <a href="{% url 'cdash' %}"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                                    </a>
+                                  </li>
+
+                                <li class="nav-header">
+                                    <span class="">Sub Category</span>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#"><i class="fa fa-file-text"></i>
+                                        <span>Pages</span>
+                                        <i class="fa fa-angle-right arrow"></i></a>
+                                    <ul class="child-nav">
+                                        <li>
+                                            <a href="{% url 'cvcld' %}"><i class="fa fa-lock"></i>
+                                                <span>View College Details</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'cvcd' %}"><i class="fa fa-thumb-tack"></i>
+                                                <span>View Course Details</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'vstdreg' %}"><i class="fa fa-user"></i>
+                                                <span>View Student Details</span></a>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                            <!-- /.side-nav -->
+                        </div>
+                        <!-- /.sidebar-nav -->
+                    </div>
+                    <!-- /.sidebar-content -->
+                </div>
+                <!-- /.left-sidebar -->
+
+                <div class="main-page">
+                    <div class="container-fluid">
+                        <div class="row breadcrumb-div">
+                            <div class="col-md-6">
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                                    </li>
+                                    <li class="active"><a href="#">Student Details</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.col-md-6 -->
+                        </div>
+                    </div>
+
+                    <section class="section">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12 border">
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">
+                                                <div class="col-lg-6">
+                                                    <h5></h5>
+                                                </div>
+                                                <div class="col-lg-6">
+
+
+                                                    <div class="modal fade" id="myModal">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <!-- Modal Header -->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">
+                                                                        <i class="fa fa-tags"></i>Add Students
+                                                                        Information
+                                                                    </h4>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal">
+                                                                        &times;
+                                                                    </button>
+                                                                </div>
+
+                                                                <!-- Modal body -->
+                                                                <form action="/vstdreg" method="POST">
+                                                                    {% csrf_token %}
+                                                                    <div class="modal-body">
+
+                                                                        <label for="firstname"><b>First Name
+                                                                                *</b></label>
+                                                                        <input type="text" placeholder=""
+                                                                            name="firstname" required /><br />
+                                                                        <label for="middlename"><b>Middle
+                                                                                Name</b></label>
+                                                                        <input type="text" placeholder=""
+                                                                            name="middlename" required /><br />
+                                                                        <label for="lastname"><b>Last Name *
+                                                                            </b></label>
+                                                                        <input type="text" placeholder=""
+                                                                            name="lastname" required /><br />
+                                                                        <label for="dob"><b>DOB * </b></label>
+                                                                        <input type="text" placeholder="" name="dob"
+                                                                            required /><br />
+                                                                        <label for="gender"><b>Gender * </b></label>
+                                                                        <input type="text" placeholder="" name="gender"
+                                                                            required /><br />
+                                                                        <label for="fname"><b>Father Name *
+                                                                                :</b></label>
+                                                                        <input type="text" placeholder="" name="fname"
+                                                                            required /><br />
+                                                                        <label for="mname"><b>Mother Name *
+                                                                                :</b></label>
+                                                                        <input type="text" placeholder="" name="mname"
+                                                                            required /><br />
+                                                                        <label for="mobile"><b>Mobile No* :</b></label>
+                                                                        <input type="number" placeholder=""
+                                                                            name="mobile" required /><br />
+                                                                        <label for="addr"><b>Address * :</b></label>
+                                                                        <input type="text" placeholder="" name="addr"
+                                                                            required /><br />
+                                                                        <label for="prevschl"><b>Previous School Name *
+                                                                                :</b></label>
+                                                                        <input type="text" placeholder=""
+                                                                            name="prevschl" required /><br />
+                                                                        <label for="per"><b>Percentage * :</b></label>
+                                                                        <input type="number" placeholder="" name="per"
+                                                                            required /><br />
+                                                                        <label for="group"><b>Group* :</b></label>
+                                                                        <input type="text" placeholder="" name="group"
+                                                                            required /><br />
+                                                                        <!-- Modal footer -->
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit"
+                                                                                class="btn btn-success">
+                                                                                ADD
+                                                                            </button>
+                                                                            <button type="button" class="btn btn-danger"
+                                                                                data-dismiss="modal">
+                                                                                CLOSE
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel-title right-side">
+                                                <input type="text" id="myInput" onkeyup="myFunction()"
+                                                    placeholder="Search using Roll No" />
+                                            </div>
+                                            <script>
+                                                function myFunction() {
+                                                    // Declare variables
+                                                    var input, filter, table, tr, td, i, txtValue
+                                                    input = document.getElementById('myInput')
+                                                    filter = input.value.toUpperCase()
+                                                    table = document.getElementById('myTable')
+                                                    tr = table.getElementsByTagName('tr')
+
+                                                    // Loop through all table rows, and hide those who don't match the search query
+                                                    for (i = 0; i < tr.length; i++) {
+                                                        td = tr[i].getElementsByTagName('td')[5]
+                                                        if (td) {
+                                                            txtValue = td.textContent || td.innerText
+                                                            if (
+                                                                txtValue.toUpperCase().indexOf(filter) > -1
+                                                            ) {
+                                                                tr[i].style.display = ''
+                                                            } else {
+                                                                tr[i].style.display = 'none'
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            </script>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="panel-body p-5">
+                                                <table id="myTable" class="display table table-striped table-bordered"
+                                                    cellspacing="0">
+                                                    <thead>
+                                                        <tr class="bg-primary">
+                                                            <th>SI NO</th>
+                                                            <th>First Name</th>
+
+                                                            <th>Last Name</th>
+                                                            <th>DOB</th>
+                                                            <th>Gender</th>
+                                                            <th>Father Name</th>
+                                                            <th>Previous School</th>
+
+
+                                                            <th>Address</th>
+                                                            <th>Actions</th>
+
+
+                                                        </tr>
+                                                    </thead>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </td>
+                                    </tr>
+                                    {% for i in varq %}
+                                    <tr>
+                                        <td>{{i.id}}</td>
+                                        <td>{{i.fname}}</td>
+
+                                        <td>{{i.lname}}</td>
+                                        <td>{{i.dob}}</td>
+                                        <td>{{i.gender}}</td>
+                                        <td>{{i.fathername}}</td>
+                                        <td>{{i.pschool}}</td>
+
+
+                                        <td>{{i.add}}</td>
+                                        <td>
+                                            <a href="clgedit/{{i.id}}">
+                                                <button type="sumbit" name="edit_btn" class="btn btn-success" data-target="#myModal">
+                                                    <span class="material-icons-outlined">
+                                                        Edit
+                                                    </span>
+                                                </button></a>
+                                            <button class="btn btn-danger" type="button">
+                                                <a href="delclg/{{i.id}}">
+                                                    <span class="material-icons-outlined">
+                                                        Delete
+                                                    </span></a>
+                                            </button>
+                                        </td>
+
+
+
+                                        {% endfor %}
+                                        <!--edit popup-->
+
+
+                                        <div class="col-md-12 mt-15 src-code">
+                                            <pre class="language-html"><code class="language-html">
+  &lt;table id="example" class="display table table-striped table-bordered" cellspacing="0" width="100%"&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Position&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tfoot&gt;
+  &lt;tr&gt;
+  &lt;th&gt;Name&lt;/th&gt;
+  &lt;th&gt;Position&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+  &lt;td&gt;Tiger Nixon&lt;/td&gt;
+  &lt;td&gt;System Architect&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;Garrett Winters&lt;/td&gt;
+  &lt;td&gt;Accountant&lt;/td&gt;
+  &lt;/tr&gt;
+  ...
+  &lt;/tbody&gt;
+  &lt;/table&gt;
+  
+  &lt;!-- ========== JS ========== --&gt;
+  &lt;script&gt;
+  $(function($) {
+  $('#example').DataTable();
+  });
+  &lt;/script&gt;
+                          </code></pre>
+                                        </div>
+                                        <!-- /.col-md-12 -->
+                                </div>
+                                <!-- /.col-md-12 -->
+                            </div>
+                        </div>
+                </div>
+                <!-- /.col-md-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+        </section>
+    </div>
+
+    </div>
+    <!-- /.content-container -->
+    </div>
+    <!-- /.content-wrapper -->
+    </div>
+    <!-- /.main-wrapper -->
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Select "Logout" below if you are ready to end your current session.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                        Cancel
+                    </button>
+                    <a class="btn btn-primary" href="{% url 'landingpage' %}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== COMMON JS FILES ========== -->
+    <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../static/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../static/js/pace/pace.min.js"></script>
+    <script src="../static/js/lobipanel/lobipanel.min.js"></script>
+    <script src="../static/js/iscroll/iscroll.js"></script>
+
+    <!-- ========== PAGE JS FILES ========== -->
+    <script src="../static/js/prism/prism.js"></script>
+
+    <!-- ========== THEME JS ========== -->
+    <script src="../static/js/main.js"></script>
+
+    <script type="text/javascript">
+        $(function ($) { })
+    </script>
+    <script>
+        $(function ($) {
+            $('#tags_1').tagsInput({ width: 'auto' })
+            $('#tags_2').tagsInput({
+                width: 'auto',
+                onChange: function (elem, elem_tags) {
+                    var languages = ['php', 'ruby', 'javascript']
+                    $('.tag', elem_tags).each(function () {
+                        if (
+                            $(this)
+                                .text()
+                                .search(new RegExp('\\b(' + languages.join('|') + ')\\b')) >=
+                            0
+                        )
+                            $(this).css('background-color', '#f39c12')
+                    })
+                },
+            })
+
+            $('[name=tags]').tagify()
+        })
+    </script>
+
+    <!-- ========== ADD custom.js FILE BELOW WITH YOUR CHANGES ========== -->
+</body>
+
+<!-- Mirrored from Worksbot-admin.themesease.com/form-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 14:46:30 GMT -->
+
+</html>

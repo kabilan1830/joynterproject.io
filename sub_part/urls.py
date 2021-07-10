@@ -1,0 +1,46 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.landingpage, name='landingpage'),
+    path('student', views.student, name='student'),
+    path('clogin', views.clogin, name='clogin'),
+    path('university', views.university, name='university'),
+    path('studentdash', views.studentdash, name='studentdash'),
+    path('stdsign', views.stdsign, name='stdsign'),
+    path('feed', views.feed, name='feed'),
+    path('vicd', views.vicd, name="vicd"),
+    path('vcd', views.vcd, name="vcd"),
+    path('srf', views.srf, name="srf"),
+    path('udash', views.udash, name="udash"),
+    path('vstd', views.vstd, name="vstd"),
+    path('uvcld', views.uvcld, name="uvcld"),
+    path('uvcd', views.uvcd, name="uvcd"),
+    path('cdash', views.cdash, name="cdash"),
+    path('cvcd', views.cvcd, name="cvcd"),
+    path('cvcld', views.cvcld, name="cvcld"),
+    path('csign', views.csign, name="csign"),
+    path('usign', views.usign, name="usign"),
+    path('udlogin', views.udlogin, name="udlogin"),
+    path('addstudent', views.addstudent, name="addstudent"),
+    path('delstd/<int:id>', views.delstd, name="delstd"),
+    path('course1', views.course1, name="course1"),
+    path('course2', views.course2, name="course2"),
+    path('college1', views.college1, name="college1"),
+    path('vstdreg', views.vstdreg, name="vstdreg"),
+    path('vsr', views.vsr, name="vsr"),
+    path('stdedit/<int:id>', views.stdedit, name="stdedit"),
+    path('sedit', views.sedit, name="sedit"),
+    path('saves/<int:id>', views.saves, name="saves"),
+    path('rf', views.rf, name="rf"),
+    path('studentlogout',views.studentlogout,name='studentlogout'),
+    path('collegelogout',views.collegelogout,name='collegelogout'),
+    path('universitylogout',views.universitylogout,name='universitylogout'),
+    path('clgedit/<int:id>', views.clgedit, name="clgedit"),
+    path('cedit', views.cedit, name="cedit"),
+    path('savec/<int:id>', views.savec, name="savec"),
+    path('delclg/<int:id>', views.delclg, name="delclg"),
+
+
+
+]

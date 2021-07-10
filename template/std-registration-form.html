@@ -1,0 +1,505 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from Worksbot-admin.themesease.com/form-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 14:46:30 GMT -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Worksbot Admin - Responsive Web Application Kit</title>
+
+  <!-- ========== COMMON STYLES ========== -->
+  <link rel="stylesheet" href="../static/css/bootstrap.css" media="screen" />
+  <link rel="stylesheet" href="../static/css/font-awesome.min.css" media="screen" />
+  <link rel="stylesheet" href="../static/css/animate-css/animate.min.css" media="screen" />
+  <link rel="stylesheet" href="../static/css/lobipanel/lobipanel.min.css" media="screen" />
+
+  <!-- ========== PAGE STYLES ========== -->
+  <link rel="stylesheet" href="../static/css/prism/prism.css" media="screen" />
+  <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
+
+  <!-- ========== THEME CSS ========== -->
+  <link rel="stylesheet" href="../static/css/main.css" media="screen" />
+
+  <!-- ========== MODERNIZR ========== -->
+  <script src="../static/js/modernizr/modernizr.min.js"></script>
+</head>
+
+<body class="top-navbar-fixed">
+  <div class="main-wrapper">
+    <!-- ========== TOP NAVBAR ========== -->
+    <nav class="navbar top-navbar bg-white box-shadow">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="navbar-header no-padding">
+            <a class="navbar-brand mr-1" href="../template/landing-page.html"><span id="title"
+                style="color: blue; font-size: x-large">J</span>OYNTER</a>
+            <span class="small-nav-handle hidden-sm hidden-xs"><i class="fa fa-outdent"></i></span>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-ellipsis-v"></i>
+            </button>
+            <button type="button" class="navbar-toggle mobile-nav-toggle">
+              <i class="fa fa-bars"></i>
+            </button>
+          </div>
+          <!-- /.navbar-header -->
+
+          <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+              <li class="hidden-sm hidden-xs">
+                <a href="#" class="user-info-handle"><i class="fa fa-user"></i></a>
+              </li>
+              <li class="hidden-sm hidden-xs">
+                <a href="#" class="full-screen-handle"><i class="fa fa-arrows-alt"></i></a>
+              </li>
+
+              <li class="hidden-xs hidden-xs">
+                <!-- <a href="#">My Tasks</a> -->
+              </li>
+            </ul>
+            <!-- /.nav navbar-nav -->
+
+            <ul class="nav navbar-nav navbar-right" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+              <!-- /.dropdown -->
+              <li>
+                <a href="#" class=""><i class="fa fa-bell"></i></a>
+              </li>
+              <li>
+                <a href="#" class=""><i class="fa fa-comments"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false">{{ut_data.name}} <span class="caret"></span></a>
+                <ul class="dropdown-menu profile-dropdown">
+                  <li class="profile-menu bg-gray">
+                    <div class="">
+                      <img src="http://placehold.it/60/c2c2c2?text=User" alt="John Doe"
+                        class="img-circle profile-img" />
+                      <div class="profile-name">
+                        <h6>{{ut_data.name}}</h6>
+                        <a href="#">View Profile</a>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-cog"></i> Settings</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-sliders"></i> Account Details</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a href="#" class="color-danger text-center" data-toggle="modal" data-target="#logoutModal"><i
+                        class="fa fa-sign-out"></i> Logout</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- /.dropdown -->
+            </ul>
+            <!-- /.nav navbar-nav navbar-right -->
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+    <!-- ========== WRAPPER FOR BOTH SIDEBARS & MAIN CONTENT ========== -->
+    <div class="content-wrapper">
+      <div class="content-container">
+        <!-- ========== LEFT SIDEBAR ========== -->
+        <div class="left-sidebar bg-black-300 box-shadow">
+          <div class="sidebar-content">
+            <div class="user-info closed">
+              <img src="http://placehold.it/90/c2c2c2?text=User" alt="John Doe" class="img-circle profile-img" />
+              <h6 class="title">{{ut_data.name}}</h6>
+              <small class="info">PHP Developer</small>
+            </div>
+            <!-- /.user-info -->
+
+            <div class="sidebar-nav">
+              <ul class="side-nav color-gray">
+                <li class="">
+                  <a href="{% url 'studentdash' %}"><i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                  </a>
+                </li>
+
+                <li class="nav-header">
+                  <span class="">Sub Category</span>
+                </li>
+                <li class="has-children">
+                  <a href="#"><i class="fa fa-file-text"></i>
+                    <span>Students Panel</span>
+                    <i class="fa fa-angle-right arrow"></i></a>
+                  <ul class="child-nav">
+                    <li>
+                      <a href="{% url 'vicd' %}"><i class="fa fa-lock"></i>
+                        <span>View College Page</span></a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'vcd' %}"><i class="fa fa-unlock"></i>
+                        <span>View Course Page</span></a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="">
+                  <a href="{% url 'srf' %}"><i class="fa fa-user"></i>
+                    <span>Registration Form</span></a>
+                </li>
+              </ul>
+              <!-- /.side-nav -->
+            </div>
+            <!-- /.sidebar-nav -->
+          </div>
+          <!-- /.sidebar-content -->
+        </div>
+        <!-- /.left-sidebar -->
+
+        <div class="main-page">
+          <div class="container-fluid">
+            <!-- /.row -->
+            <div class="row breadcrumb-div">
+              <div class="col-md-6">
+                <ul class="breadcrumb">
+                  <li>
+                    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                  </li>
+                  <li class="active"><a href="#">Rgistration Form</a></li>
+                </ul>
+              </div>
+              <!-- /.col-md-6 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+            <section class="section">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel">
+                      <div class="panel-heading">
+                        <div class="panel-title">
+                          <h5>Student Registration Form</h5>
+                        </div>
+                      </div>
+                      <div class="panel-body">
+                        <form class="p-5" action="/rf" method="POST">
+                          {% csrf_token %}
+                          <h5 class="underline mt-n">Personal Details</h5>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="name13">First Name</label>
+                                <input type="text" name="fname" class="form-control" id="name13"
+                                  placeholder="Enter Your First Name" />
+                              </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <!-- /.col-md-6 -->
+                          </div>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input type="text" name="lname" class="form-control" id="lname"
+                                  placeholder="Enter Your Last Name" />
+                              </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="date">DOB</label>
+                                <input type="date" name="dob" class="form-control" id="ename" />
+                              </div>
+                            </div>
+                          </div>
+                            <!-- /.col-md-6 -->
+                          <div class="row">
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="Gender">Gender</label>
+                                <input type="text" name="gender" class="form-control" id="gender"
+                                  placeholder="Gender" />
+
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.col-md-6 -->
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="father">Father's Name</label>
+                                <input type="text" name="fathername" class="form-control" id="father"
+                                  placeholder="Enter Your Father Name" />
+                              </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <!-- /.col-md-6 -->
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="addr">Address</label>
+                                <textarea type="text" name="add" class="form-control" id="addr"
+                                  placeholder="Start typing here..."></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.col-md-12 -->
+
+                          <h5 class="underline mt-20">Educational Details</h5>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="pschl">School</label>
+                                <input type="text" name="pschool" class="form-control" id="pschl"
+                                  placeholder="Enter Your School Name" />
+                              </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <!-- /.col-md-6 -->
+                          </div>
+                          <!-- /.col-md-6 -->
+
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" /> I accept
+                                  <a href="#" class="color-primary">terms & conditions</a>
+                                </label>
+                              </div>
+                            </div>
+                            <!-- /.col-md-12 -->
+
+                            <div class="col-md-12">
+                              <div class="btn-group pull-right mt-10" role="group">
+                                <button type="reset" class="btn btn-gray btn-wide">
+                                  <i class="fa fa-times"></i>Cancel
+                                </button>
+
+                                
+                                    <button type="submit">
+                                      Submit</button>
+
+                              </div>
+                              <!-- /.btn-group -->
+                            </div>
+                            <!-- /.col-md-12 -->
+                          </div>
+                        </form>
+
+                        <div class="col-md-12 mt-15 src-code">
+                          <pre class="language-html"><code class="language-html">
+&lt;form class="p-20"&gt;
+    &lt;h5 class="underline mt-n"&gt;Account Info&lt;/h5&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="name13"&gt;Full Name&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="name13" placeholder="Enter Your Full Name"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="username13"&gt;Username&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="username13" placeholder="Enter Desired Username"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="exampleInputEmail13"&gt;Email address&lt;/label&gt;
+                &lt;input type="email" class="form-control" id="exampleInputEmail13" placeholder="Enter Your Email Id"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="contact13"&gt;Contact Number&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="contact13" placeholder="Enter Your Mobile Phone Number"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="exampleInputPassword13"&gt;Password&lt;/label&gt;
+                &lt;input type="password" class="form-control" id="exampleInputPassword13" placeholder="Enter Strong Password"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="exampleInputPassword14"&gt;Confirm Password&lt;/label&gt;
+                &lt;input type="password" class="form-control" id="exampleInputPassword14" placeholder="Confirm your password"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+    &lt;/div&gt;
+
+
+    &lt;h5 class="underline mt-30"&gt;Address Details&lt;/h5&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-12"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="addr"&gt;Street Address&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="addr" placeholder="Enter Your Street Address"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-12 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="city"&gt;City&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="city" placeholder="Enter Your City"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="state"&gt;State&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="state" placeholder="Enter Your State"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="country"&gt;Country&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="country" placeholder="Enter Your Country"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label for="zip"&gt;Zip Code&lt;/label&gt;
+                &lt;input type="text" class="form-control" id="zip" placeholder="Enter Your Zip Code"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-6 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-12"&gt;
+            &lt;div class="checkbox"&gt;
+                &lt;label&gt;
+                    &lt;input type="checkbox"&gt; I accept &lt;a href="#" class="color-primary"&gt;terms & conditions&lt;/a&gt;
+                &lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-12 --&gt;
+
+        &lt;div class="col-md-12"&gt;
+            &lt;div class="btn-group pull-right mt-10" role="group"&gt;
+                &lt;button type="reset" class="btn btn-gray btn-wide"&gt;&lt;i class="fa fa-times"&gt;&lt;/i&gt;Cancel&lt;/button&gt;
+                &lt;button type="button" class="btn bg-black btn-wide"&gt;&lt;i class="fa fa-arrow-right"&gt;&lt;/i&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;!-- /.btn-group --&gt;
+        &lt;/div&gt;
+        &lt;!-- /.col-md-12 --&gt;
+    &lt;/div&gt;
+
+&lt;/form&gt;
+                                                    </code></pre>
+                        </div>
+                        <!-- /.col-md-12 -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.col-md-12 -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.container-fluid -->
+            </section>
+            <!-- /.section -->
+        </div>
+        <!-- /.main-page -->
+
+        <!-- /.right-sidebar -->
+      </div>
+      <!-- /.content-container -->
+    </div>
+    <!-- /.content-wrapper -->
+  </div>
+  <!-- /.main-wrapper -->
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Select "Logout" below if you are ready to end your current session.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">
+            Cancel
+          </button>
+          <a class="btn btn-primary" href="{% url 'landingpage' %}">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== COMMON JS FILES ========== -->
+  <script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
+  <script src="../static/js/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../static/js/bootstrap/bootstrap.min.js"></script>
+  <script src="../static/js/pace/pace.min.js"></script>
+  <script src="../static/js/lobipanel/lobipanel.min.js"></script>
+  <script src="../static/js/iscroll/iscroll.js"></script>
+
+  <!-- ========== PAGE JS FILES ========== -->
+  <script src="../static/js/prism/prism.js"></script>
+
+  <!-- ========== THEME JS ========== -->
+  <script src="../static/js/main.js"></script>
+
+  <script type="text/javascript">
+    $(function ($) { })
+  </script>
+
+  <!-- ========== ADD custom.js FILE BELOW WITH YOUR CHANGES ========== -->
+</body>
+
+<!-- Mirrored from Worksbot-admin.themesease.com/form-layouts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Feb 2021 14:46:30 GMT -->
+
+</html>
